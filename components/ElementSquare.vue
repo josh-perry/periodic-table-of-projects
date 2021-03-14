@@ -1,13 +1,21 @@
 <template>
-  <div class="element-square">
-    <p>{{ name }}</p>
+  <div class="element-square" @click="select">
+    <p>{{ element.symbol }}</p>
+    <p>{{ element.count }}</p>
   </div>
 </template>
 
 <script>
+import { mapMutations } from "vuex"
+
 export default {
   name: "ElementSquare",
-  props: ["name", "projects"]
+  props: [ "element" ],
+  methods: {
+    select: function(event) {
+      this.$store.commit("selectedElement/select", this.element.name);
+    }
+  }
 }
 </script>
 
