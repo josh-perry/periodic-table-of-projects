@@ -1,6 +1,6 @@
 <template>
   <div class="periodic-table">
-    <ElementSquare :element="Elements['Hydrogen']" v-on:elementClicked="elementSelected"/>
+    <ElementSquare :element="Elements['Hydrogen']"/>
     <BlankElementSquare v-for="index in 16"/>
     <ElementSquare :element="Elements['Helium']"/>
 
