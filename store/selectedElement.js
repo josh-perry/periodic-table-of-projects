@@ -1,12 +1,15 @@
 export const state = () => ({
-  elementName: ""
+  elementName: "",
+  projects: []
 });
 
 export const mutations = {
-  select(state, elementName) {
+  async select(state, elementName) {
     state.elementName = elementName;
+    state.projects = await this.$http.$get(`/json/${elementName}.json`);
   },
   unselect(state) {
-    elementName = "";
+    state.elementName = "";
+    state.projects = [];
   }
 }

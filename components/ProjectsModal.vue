@@ -17,17 +17,10 @@ export default {
   name: "ProjectsModal",
   computed: {
     elementName() {
-      return this.$store.state.selectedElement.elementName
+      return this.$store.state.selectedElement.elementName;
     },
     projects() {
-      const elementName = this.$store.state.selectedElement.elementName
-
-      if (elementName !== "") {
-        const projects = require(`../static/json/${elementName}.json`)
-        return projects
-      }
-
-      return [];
+      return this.$store.state.selectedElement.projects;
     }
   }
 };
