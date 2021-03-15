@@ -28,15 +28,14 @@ export default {
 
 <style scoped>
 .modal {
+  overflow: scroll;
 }
 
 .project-container {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .project {
-  flex: 1;
-  width: 50%;
+  width: 100%;
+  margin: 10px;
 }
 </style>

@@ -159,5 +159,7 @@ export default {
 
   flex-flow: row wrap;
   justify-content: space-around;
+
+  margin: 30px;
 }
 </style>
