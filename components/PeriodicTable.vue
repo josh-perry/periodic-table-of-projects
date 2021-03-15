@@ -1,13 +1,10 @@
 <template>
   <div class="periodic-table">
-    <ElementSquare :element="Elements['Hydrogen']"/>
-    <BlankElementSquare v-for="index in 16"/>
-    <ElementSquare :element="Elements['Helium']"/>
-
+    <ElementSquare class="element-h" :element="Elements['Hydrogen']"/>
+    <ElementSquare class="element-he" :element="Elements['Helium']"/>
     <ElementSquare :element="Elements['Lithium']"/>
     <ElementSquare :element="Elements['Beryllium']"/>
-    <BlankElementSquare v-for="index in 10"/>
-    <ElementSquare :element="Elements['Boron']"/>
+    <ElementSquare class="element-b" :element="Elements['Boron']"/>
     <ElementSquare :element="Elements['Carbon']"/>
     <ElementSquare :element="Elements['Nitrogen']"/>
     <ElementSquare :element="Elements['Oxygen']"/>
@@ -16,8 +13,7 @@
 
     <ElementSquare :element="Elements['Sodium']"/>
     <ElementSquare :element="Elements['Magnesium']"/>
-    <BlankElementSquare v-for="index in 10"/>
-    <ElementSquare :element="Elements['Aluminum']"/>
+    <ElementSquare class="element-al" :element="Elements['Aluminum']"/>
     <ElementSquare :element="Elements['Silicon']"/>
     <ElementSquare :element="Elements['Phosphorus']"/>
     <ElementSquare :element="Elements['Sulfur']"/>
@@ -101,40 +97,37 @@
     <ElementSquare :element="Elements['Tennessine']"/>
     <ElementSquare :element="Elements['Oganesson']"/>
 
-    <BlankElementSquare v-for="index in 18"/>
-    <BlankElementSquare v-for="index in 2"/>
-    <ElementSquare :element="Elements['Cerium']"/>
-    <ElementSquare :element="Elements['Praseodymium']"/>
-    <ElementSquare :element="Elements['Neodymium']"/>
-    <ElementSquare :element="Elements['Promethium']"/>
-    <ElementSquare :element="Elements['Samarium']"/>
-    <ElementSquare :element="Elements['Europium']"/>
-    <ElementSquare :element="Elements['Gadolinium']"/>
-    <ElementSquare :element="Elements['Terbium']"/>
-    <ElementSquare :element="Elements['Dysprosium']"/>
-    <ElementSquare :element="Elements['Holmium']"/>
-    <ElementSquare :element="Elements['Erbium']"/>
-    <ElementSquare :element="Elements['Thulium']"/>
-    <ElementSquare :element="Elements['Ytterbium']"/>
-    <ElementSquare :element="Elements['Lutetium']"/>
-    <BlankElementSquare v-for="index in 2"/>
+    <ElementSquare class="element-la" :element="Elements['Lanthanum']"/>
+    <ElementSquare class="element-ce" :element="Elements['Cerium']"/>
+    <ElementSquare class="element-pr" :element="Elements['Praseodymium']"/>
+    <ElementSquare class="element-nd" :element="Elements['Neodymium']"/>
+    <ElementSquare class="element-pm" :element="Elements['Promethium']"/>
+    <ElementSquare class="element-sm" :element="Elements['Samarium']"/>
+    <ElementSquare class="element-eu" :element="Elements['Europium']"/>
+    <ElementSquare class="element-gd" :element="Elements['Gadolinium']"/>
+    <ElementSquare class="element-tb" :element="Elements['Terbium']"/>
+    <ElementSquare class="element-dy" :element="Elements['Dysprosium']"/>
+    <ElementSquare class="element-ho" :element="Elements['Holmium']"/>
+    <ElementSquare class="element-er" :element="Elements['Erbium']"/>
+    <ElementSquare class="element-tm" :element="Elements['Thulium']"/>
+    <ElementSquare class="element-yb" :element="Elements['Ytterbium']"/>
+    <ElementSquare class="element-lu" :element="Elements['Lutetium']"/>
 
-    <BlankElementSquare v-for="index in 2"/>
-    <ElementSquare :element="Elements['Thorium']"/>
-    <ElementSquare :element="Elements['Protactinium']"/>
-    <ElementSquare :element="Elements['Uranium']"/>
-    <ElementSquare :element="Elements['Neptunium']"/>
-    <ElementSquare :element="Elements['Plutonium']"/>
-    <ElementSquare :element="Elements['Americium']"/>
-    <ElementSquare :element="Elements['Curium']"/>
-    <ElementSquare :element="Elements['Berkelium']"/>
-    <ElementSquare :element="Elements['Californium']"/>
-    <ElementSquare :element="Elements['Einsteinium']"/>
-    <ElementSquare :element="Elements['Fermium']"/>
-    <ElementSquare :element="Elements['Mendelevium']"/>
-    <ElementSquare :element="Elements['Nobelium']"/>
-    <ElementSquare :element="Elements['Lawrencium']"/>
-    <BlankElementSquare v-for="index in 2"/>
+    <ElementSquare class="element-ac" :element="Elements['Actinium']"/>
+    <ElementSquare class="element-th" :element="Elements['Thorium']"/>
+    <ElementSquare class="element-pa" :element="Elements['Protactinium']"/>
+    <ElementSquare class="element-u" :element="Elements['Uranium']"/>
+    <ElementSquare class="element-np" :element="Elements['Neptunium']"/>
+    <ElementSquare class="element-pu" :element="Elements['Plutonium']"/>
+    <ElementSquare class="element-am" :element="Elements['Americium']"/>
+    <ElementSquare class="element-cm" :element="Elements['Curium']"/>
+    <ElementSquare class="element-bk" :element="Elements['Berkelium']"/>
+    <ElementSquare class="element-cf" :element="Elements['Californium']"/>
+    <ElementSquare class="element-es" :element="Elements['Einsteinium']"/>
+    <ElementSquare class="element-fm" :element="Elements['Fermium']"/>
+    <ElementSquare class="element-md" :element="Elements['Mendelevium']"/>
+    <ElementSquare class="element-no" :element="Elements['Nobelium']"/>
+    <ElementSquare class="element-lr" :element="Elements['Lawrencium']"/>
   </div>
 </template>
 
@@ -155,11 +148,136 @@ export default {
 
 <style scoped>
 .periodic-table {
-  display: flex;
+  display: grid;
 
-  flex-flow: row wrap;
-  justify-content: space-around;
-
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 4px;
   margin: 30px;
+}
+
+.element-al,
+.element-b {
+  grid-column-start: 13;
+}
+
+.element-he {
+  grid-column-start: 18;
+}
+
+.element-ce,
+.element-pr,
+.element-nd,
+.element-pm,
+.element-sm,
+.element-eu,
+.element-gd,
+.element-tb,
+.element-dy,
+.element-ho,
+.element-er,
+.element-tm,
+.element-yb,
+.element-lu,
+.element-la {
+  grid-row-start: 9;
+}
+
+.element-ac,
+.element-th,
+.element-pa,
+.element-u,
+.element-np,
+.element-pu,
+.element-am,
+.element-cm,
+.element-bk,
+.element-cf,
+.element-es,
+.element-fm,
+.element-md,
+.element-no,
+.element-lr {
+  grid-row-start: 10;
+}
+
+.element-la,
+.element-ac {
+  grid-column-start: 3;
+}
+
+.element-ce,
+.element-th {
+  grid-column-start: 4;
+}
+
+.element-pr,
+.element-pa {
+  grid-column-start: 5;
+}
+
+.element-nd,
+.element-u {
+  grid-column-start: 6;
+}
+
+.element-pm,
+.element-np {
+  grid-column-start: 7;
+}
+
+.element-sm,
+.element-pu {
+  grid-column-start: 8;
+}
+
+.element-eu,
+.element-am {
+  grid-column-start: 9;
+}
+
+.element-gd,
+.element-cm {
+  grid-column-start: 10;
+}
+
+.element-tb,
+.element-bk {
+  grid-column-start: 11;
+}
+
+.element-dy,
+.element-cf {
+  grid-column-start: 12;
+}
+
+.element-ho,
+.element-es {
+  grid-column-start: 13;
+}
+
+.element-er,
+.element-fm {
+  grid-column-start: 14;
+}
+
+.element-tm,
+.element-md {
+  grid-column-start: 15;
+}
+
+.element-yb,
+.element-no {
+  grid-column-start: 16;
+}
+
+.element-lu,
+.element-lr {
+  grid-column-start: 17;
+}
+
+.element-square {
+  width: 100%;
+  height: 100%;
 }
 </style>
