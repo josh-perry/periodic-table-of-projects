@@ -3,7 +3,7 @@
     <p>{{ elementName }}</p>
 
     <div class="project-container">
-      <div v-for="project in projects" class="project">
+      <div v-for="project in projects" :key="project.id" class="project">
         <a :href="`https://github.com/${project.full_name}`">
           <img :src="`https://gh-card.dev/repos/${project.full_name}.svg?fullname=`">
         </a>

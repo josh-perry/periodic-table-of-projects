@@ -133,12 +133,10 @@
 
 <script>
 import Elements from '../static/json/meta.json'
-import ElementSquare from './ElementSquare.vue'
-import BlankElementSquare from './BlankElementSquare.vue'
 
 export default {
   name: 'PeriodicTable',
-  data ({ $http }) {
+  data () {
     return {
       Elements
     }
