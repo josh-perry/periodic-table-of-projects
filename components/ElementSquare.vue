@@ -20,8 +20,8 @@ export default {
     }
   },
   computed: {
-    selected() {
-      return this.$store.state.selectedElement.elementName == this.element.name
+    selected () {
+      return this.$store.state.selectedElement.elementName === this.element.name
     }
   },
   methods: {
