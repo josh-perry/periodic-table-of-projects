@@ -6,14 +6,14 @@
 </template>
 
 <script>
-import { mapMutations } from "vuex"
+import { mapMutations } from 'vuex'
 
 export default {
-  name: "ElementSquare",
-  props: [ "element" ],
+  name: 'ElementSquare',
+  props: ['element'],
   methods: {
-    select: function(event) {
-      this.$store.commit("selectedElement/select", this.element.name);
+    select (event) {
+      this.$store.commit('selectedElement/select', this.element.name)
     }
   }
 }

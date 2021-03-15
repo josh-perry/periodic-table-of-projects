@@ -3,7 +3,7 @@
     <p>{{ elementName }}</p>
 
     <div class="project-container">
-      <div class="project" v-for="project in projects">
+      <div v-for="project in projects" class="project">
         <a :href="`https://github.com/${project.full_name}`">
           <img :src="`https://gh-card.dev/repos/${project.full_name}.svg?fullname=`">
         </a>
@@ -14,16 +14,16 @@
 
 <script>
 export default {
-  name: "ProjectsModal",
+  name: 'ProjectsModal',
   computed: {
-    elementName() {
-      return this.$store.state.selectedElement.elementName;
+    elementName () {
+      return this.$store.state.selectedElement.elementName
     },
-    projects() {
-      return this.$store.state.selectedElement.projects;
+    projects () {
+      return this.$store.state.selectedElement.projects
     }
   }
-};
+}
 </script>
 
 <style scoped>
