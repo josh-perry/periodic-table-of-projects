@@ -1,11 +1,10 @@
 <template>
-  <div class="element-square">
-  </div>
+  <div class="element-square" />
 </template>
 
 <script>
 export default {
-  name: "ElementSquare",
+  name: 'ElementSquare'
 }
 </script>
 

@@ -3,8 +3,8 @@
     <h1>Periodic Table of Projects</h1>
 
     <div class="container">
-      <PeriodicTable class="left"/>
-      <ProjectsModal class="right"/>
+      <PeriodicTable class="left" />
+      <ProjectsModal class="right" />
     </div>
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default {};
+export default {}
 </script>
 
 <style scoped>
