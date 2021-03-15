@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     select () {
-      this.$store.commit('selectedElement/select', this.element.name)
+      this.$store.dispatch('selectedElement/updateSelectedElement', this.element.name)
     }
   }
 }
@@ -33,6 +33,7 @@ export default {
   flex: 1 1 5.5%;
 
   border: 1px solid black;
+  border-radius: 8px;
 
   display: flex;
   align-items: center;
