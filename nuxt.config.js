@@ -2,7 +2,11 @@ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/periodic-table-of-projects'
   }
-} : {}
+} : {
+  router: {
+    base: ''
+  }
+}
 
 export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -56,6 +60,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  publicRuntimeConfig: {
+    baseUrl: routerBase.router.base
   },
 
   ...routerBase
