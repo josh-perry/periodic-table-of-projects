@@ -1,5 +1,5 @@
 <template>
-  <div class="element-square" @click="select">
+  <div class="element-square" :class="{ 'element-selected': selected }" @click="select">
     <p>{{ element.symbol }}</p>
     <p>{{ element.count }}</p>
   </div>
@@ -17,6 +17,11 @@ export default {
           count: 0
         }
       }
+    }
+  },
+  computed: {
+    selected() {
+      return this.$store.state.selectedElement.elementName == this.element.name
     }
   },
   methods: {
@@ -37,6 +42,8 @@ export default {
 
   display: flex;
   align-items: center;
+
+  user-select: none;
 }
 
 .element-square>p {
@@ -47,5 +54,9 @@ export default {
 .element-square:before {
   content: "";
   margin-top: 100%;
+}
+
+.element-selected {
+  background: rgb(113, 165, 189);
 }
 </style>
