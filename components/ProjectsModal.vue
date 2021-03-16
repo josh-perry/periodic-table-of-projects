@@ -30,8 +30,8 @@ export default {
     projects () {
       return this.$store.state.selectedElement.projects
     },
-    results_link() {
-      const searchQuery = `in:name ${this.elementName}`;
+    results_link () {
+      const searchQuery = `in:name ${this.elementName}`
       return `https://github.com/search?q=${encodeURIComponent(searchQuery)}`
     }
   }
@@ -49,7 +49,7 @@ h2 {
   display: flex;
   flex-direction: column;
   margin: 30px;
-  background-color: #eeeeee;
+  background-color: white;
   border: solid 2px black;
   border-radius: 4px;
 }
