@@ -21,11 +21,12 @@ export default {}
 }
 
 .left {
-  flex: 0 0 70%;
+  flex: 1 1 60%;
 }
 
 .right {
-  flex: 0 0 25%;
+  flex: 1 1 30%;
   height: 90vh;
+  min-width: 400px;
 }
 </style>
