@@ -12,10 +12,10 @@ def process_file(filename):
 
   with open(f"{raw_data_dir}/{filename}") as f:
     file_json = json.load(f)
+    elements_project_count[filename] = file_json["total_count"]
 
     for project in file_json["items"]:
       projects.append(project)
-      elements_project_count[filename] += 1
 
   with open(f"{processed_data_dir}/{filename}.json", "w") as f:
     json.dump(projects, f)
