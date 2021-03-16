@@ -1,5 +1,5 @@
 <template>
-  <div class="element-square" :class="{ 'element-selected': selected }" @click="select">
+  <div :title="element.name" class="element-square" :class="{ 'element-selected': selected }" @click="select">
     <p>{{ element.symbol }}</p>
     <p>{{ element.count }}</p>
   </div>
@@ -44,6 +44,7 @@ export default {
   align-items: center;
 
   user-select: none;
+  cursor: pointer;
 }
 
 .element-square>p {
