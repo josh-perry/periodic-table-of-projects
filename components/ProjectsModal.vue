@@ -13,7 +13,7 @@
     </div>
 
     <div class="button-container">
-      <a class="button" href="#">
+      <a class="button" :href="results_link">
         <span>See all results on GitHub</span>
       </a>
     </div>
@@ -29,6 +29,10 @@ export default {
     },
     projects () {
       return this.$store.state.selectedElement.projects
+    },
+    results_link() {
+      const searchQuery = `in:name ${this.elementName}`;
+      return `https://github.com/search?q=${encodeURIComponent(searchQuery)}`
     }
   }
 }
