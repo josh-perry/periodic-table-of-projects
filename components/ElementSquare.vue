@@ -1,5 +1,5 @@
 <template>
-  <div :title="element.name" class="element-square" :class="{ 'element-selected': selected }" @click="select">
+  <div :title="`${element.name} (${element.count} projects)`" class="element-square" :class="{ 'element-selected': selected }" @click="select">
     <small>{{ element.count }}</small>
     <p>{{ element.symbol }}</p>
   </div>
