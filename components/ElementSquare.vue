@@ -1,7 +1,7 @@
 <template>
   <div :title="element.name" class="element-square" :class="{ 'element-selected': selected }" @click="select">
+    <small>{{ element.count }}</small>
     <p>{{ element.symbol }}</p>
-    <p>{{ element.count }}</p>
   </div>
 </template>
 
@@ -34,30 +34,37 @@ export default {
 
 <style scoped>
 .element-square {
-  margin: auto;
-  flex: 1 1 5.5%;
-
-  border: 1px solid black;
-  border-radius: 8px;
-
-  display: flex;
-  align-items: center;
+  border: 2px solid black;/*rgb(10, 106, 215);*/
+  border-radius: 4px;
 
   user-select: none;
   cursor: pointer;
+
+  background: #ffffff;
 }
 
 .element-square>p {
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
+  font-weight: bold;
+
+  margin-top: 8px;
+  margin-bottom: 12px;
+}
+
+.element-square>small {
+  margin-left: 4px;
 }
 
 .element-square:before {
   content: "";
-  margin-top: 100%;
+  padding-top: 100%;
 }
 
 .element-selected {
-  background: rgb(113, 165, 189);
+  background: rgb(10, 106, 215);
+  border-radius: 4px;
+  color: #ffffff;
 }
 </style>

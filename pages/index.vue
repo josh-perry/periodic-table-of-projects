@@ -13,6 +13,12 @@
 export default {}
 </script>
 
+<style>
+html {
+  background-color: #eeeeee;
+}
+</style>
+
 <style scoped>
 .container {
   display: flex;
@@ -26,7 +32,11 @@ export default {}
 
 .right {
   flex: 1 1 30%;
-  height: 90vh;
+  height: 80vh;
   min-width: 400px;
+}
+
+h1 {
+  margin: 16px;
 }
 </style>

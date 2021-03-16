@@ -1,10 +1,20 @@
 <template>
   <div>
     <Nuxt />
+
+    <footer>
+      <p>Made by <a href="https://github.com/josh-perry">Josh</a>, hosted on GitHub Pages</p>
+      <p>Send me a <a href="https://github.com/josh-perry/periodic-table-of-projects">pull request &lt;3</a></p>
+    </footer>
   </div>
 </template>
 
 <style>
+footer {
+  margin: 20px;
+  text-align: center;
+}
+
 html {
   font-family:
     'Source Sans Pro',
