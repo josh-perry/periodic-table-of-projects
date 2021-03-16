@@ -34,7 +34,7 @@ export default {
 
 <style scoped>
 .element-square {
-  border: 2px solid black;/*rgb(10, 106, 215);*/
+  border: 3px solid black;
   border-radius: 4px;
 
   user-select: none;
