@@ -5,7 +5,7 @@
     <div class="modal">
       <div class="project-container">
         <div v-for="project in projects" :key="project.id" class="project">
-          <a class="project-card" :href="`https://github.com/${project.full_name}`">
+          <a class="project-card" :href="`https://github.com/${project.full_name}`" target="_blank">
             <img :src="`https://gh-card.dev/repos/${project.full_name}.svg?fullname=`">
           </a>
         </div>
@@ -13,7 +13,7 @@
     </div>
 
     <div class="button-container">
-      <a class="button" :href="results_link">
+      <a v-bind:class="button_classes" :href="results_link" target="_blank">
         <span>See all results on GitHub</span>
       </a>
     </div>
@@ -31,8 +31,22 @@ export default {
       return this.$store.state.selectedElement.projects
     },
     results_link () {
+      if (this.elementName === '') {
+        return ''
+      }
+
       const searchQuery = `in:name ${this.elementName}`
       return `https://github.com/search?q=${encodeURIComponent(searchQuery)}`
+    },
+    search_button_disabled () {
+      return this.elementName === ''
+    },
+    button_classes: function () {
+      return {
+        "button": true,
+        "button-enabled": this.elementName !== '',
+        "button-disabled": this.elementName === ''
+      }
     }
   }
 }
@@ -72,13 +86,23 @@ a.button {
   text-align: center;
 
   text-decoration: none;
-  background-color: rgb(10, 106, 215);
   color: white;
 
   display: table;
 
   width: 100%;
   height: 100%;
+
+  user-select: none;
+}
+
+.button-disabled {
+  background-color: #333333;
+  pointer-events: none;
+}
+
+.button-enabled {
+  background-color: rgb(10, 106, 215);
 }
 
 a>span {
