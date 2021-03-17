@@ -13,7 +13,7 @@
     </div>
 
     <div class="button-container">
-      <a v-bind:class="button_classes" :href="results_link" target="_blank">
+      <a :class="button_classes" :href="results_link" target="_blank">
         <span>See all results on GitHub</span>
       </a>
     </div>
@@ -41,11 +41,11 @@ export default {
     search_button_disabled () {
       return this.elementName === ''
     },
-    button_classes: function () {
+    button_classes () {
       return {
-        "button": true,
-        "button-enabled": this.elementName !== '',
-        "button-disabled": this.elementName === ''
+        button: true,
+        'button-enabled': this.elementName !== '',
+        'button-disabled': this.elementName === ''
       }
     }
   }
